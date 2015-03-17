@@ -20,4 +20,7 @@ data = pd.read_sql_query('''SELECT year, COUNT(species) as abundance
 
 
 plt.plot(data["year"], data["abundance"],'bs')
+plt.xlabel('year')
+plt.ylabel("abundance")
+plt.title('abundance time series for {} {}'.format(genus,species))
 plt.show()
