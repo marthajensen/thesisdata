@@ -17,4 +17,7 @@ data = pd.read_sql_query('''SELECT year, COUNT(species) as abundance
                             AND species.species = "{}"
                             GROUP BY year;'''.format(genus,species),engine)
 							
-print data.head()
+
+
+plt.plot(data["year"], data["abundance"],'bs')
+plt.show()
